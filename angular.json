@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "90b0eb33-70b8-448f-a5c9-072f6498ca93",
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -41,7 +41,10 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -77,10 +80,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app1-home:build:production"
+              "browserTarget": "app1-home:build:production",
+              "customWebpackConfig": {
+                "path": "webpack.config.ts"
+              }
             },
             "development": {
               "browserTarget": "app1-home:build:development",
@@ -127,10 +133,10 @@
       },
       "root": "projects/app2-restaurant",
       "sourceRoot": "projects/app2-restaurant/src",
-      "prefix": "app",
+      "prefix": "pmo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/app2-restaurant",
             "index": "projects/app2-restaurant/src/index.html",
@@ -140,12 +146,20 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/app2-restaurant/src/favicon.ico",
-              "projects/app2-restaurant/src/assets"
+              "projects/app2-restaurant/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
             ],
             "styles": [
-              "projects/app2-restaurant/src/styles.scss"
+              "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "projects/app2-restaurant/webpack.config.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -181,13 +195,17 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app2-restaurant:build:production"
+              "browserTarget": "app2-restaurant:build:production",
+              "customWebpackConfig": {
+                "path": "projects/app2-restaurant/webpack.config.prod.ts"
+              }
             },
             "development": {
-              "browserTarget": "app2-restaurant:build:development"
+              "browserTarget": "app2-restaurant:build:development",
+              "port": 4204
             }
           },
           "defaultConfiguration": "development"
@@ -230,10 +248,10 @@
       },
       "root": "projects/app3-orders",
       "sourceRoot": "projects/app3-orders/src",
-      "prefix": "app",
+      "prefix": "pmo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/app3-orders",
             "index": "projects/app3-orders/src/index.html",
@@ -243,12 +261,20 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/app3-orders/src/favicon.ico",
-              "projects/app3-orders/src/assets"
+              "projects/app3-orders/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
             ],
             "styles": [
-              "projects/app3-orders/src/styles.scss"
+              "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "projects/app3-orders/webpack.config.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -284,13 +310,17 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app3-orders:build:production"
+              "browserTarget": "app3-orders:build:production",
+              "customWebpackConfig": {
+                "path": "projects/app3-orders/webpack.config.ts"
+              }
             },
             "development": {
-              "browserTarget": "app3-orders:build:development"
+              "browserTarget": "app3-orders:build:development",
+              "port": 4205
             }
           },
           "defaultConfiguration": "development"
