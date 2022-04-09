@@ -3,10 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:app1": "ng serve",
+    "start:app2": "ng serve app2-restaurant",
+    "start:app3": "ng serve app3-orders",
+    "build:app1": "ng build",
+    "build:app2": "ng build app2-restaurant",
+    "build:app3": "ng build app3-orders",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start:all": "npm run start:app1 & npm run start:app2 & npm run start:app3"
   },
   "private": true,
   "dependencies": {

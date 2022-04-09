@@ -8,14 +8,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
-    path: 'restaurants',
-    loadChildren: () => import('./pages/restaurant/restaurant.module').then(m =>  m.RestaurantModule),
-  },
-  {
-    path: 'order',
-    loadChildren: () => import('./pages/order/order.module').then(m => m.OrderModule),
-  },
-  {
     path: '', redirectTo: 'home', pathMatch: 'full'
   }
 ];
