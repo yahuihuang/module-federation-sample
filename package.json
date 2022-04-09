@@ -9,6 +9,7 @@
     "build:app1": "ng build",
     "build:app2": "ng build app2-restaurant",
     "build:app3": "ng build app3-orders",
+    "build:util-lib": "ng build utils",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:all": "npm run start:app1 & npm run start:app2 & npm run start:app3"
