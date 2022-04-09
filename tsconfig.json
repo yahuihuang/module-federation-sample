@@ -21,7 +21,13 @@
       "dom"
     ],
     "paths": {
-      "@styles/*": ["styles/*"]
+      "@styles/*": [
+        "styles/*"
+      ],
+      "utils": [
+        "dist/utils/utils",
+        "dist/utils"
+      ]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true
