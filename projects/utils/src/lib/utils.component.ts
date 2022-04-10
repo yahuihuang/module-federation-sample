@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-utils',
+  selector: 'app-header',
   templateUrl: './utils.component.html',
   styles: [
   ]

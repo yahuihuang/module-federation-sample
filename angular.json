@@ -21,7 +21,7 @@
       "prefix": "pmo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/app1-home",
             "index": "src/index.html",
@@ -51,8 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -60,6 +60,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              "customWebpackConfig": {
+                "path": "webpack.config.prod.ts"
+              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -83,10 +86,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app1-home:build:production",
-              "customWebpackConfig": {
-                "path": "webpack.config.ts"
-              }
+              "browserTarget": "app1-home:build:production"
             },
             "development": {
               "browserTarget": "app1-home:build:development",
@@ -166,8 +166,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -175,6 +175,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              "customWebpackConfig": {
+                "path": "projects/app2-restaurant/webpack.config.prod.ts"
+              },
               "fileReplacements": [
                 {
                   "replace": "projects/app2-restaurant/src/environments/environment.ts",
@@ -198,10 +201,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app2-restaurant:build:production",
-              "customWebpackConfig": {
-                "path": "projects/app2-restaurant/webpack.config.prod.ts"
-              }
+              "browserTarget": "app2-restaurant:build:production"
             },
             "development": {
               "browserTarget": "app2-restaurant:build:development",
@@ -281,8 +281,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -290,6 +290,9 @@
                   "maximumError": "4kb"
                 }
               ],
+              "customWebpackConfig": {
+                "path": "projects/app3-orders/webpack.config.prod.ts"
+              },
               "fileReplacements": [
                 {
                   "replace": "projects/app3-orders/src/environments/environment.ts",
@@ -313,10 +316,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app3-orders:build:production",
-              "customWebpackConfig": {
-                "path": "projects/app3-orders/webpack.config.ts"
-              }
+              "browserTarget": "app3-orders:build:production"
             },
             "development": {
               "browserTarget": "app3-orders:build:development",

@@ -15,7 +15,7 @@ export class MfeOrderComponent implements OnInit {
     async ngOnInit() {
       const OrderComponent = await mfe.loadRemoteFile({
         remoteName: "orders",
-        remoteEntry: `http://localhost:4205/remoteOrders.js`,
+        remoteEntry: `http://127.0.0.1:4205/remoteOrders.js`,
         exposedFile: "OrderComponent",
         exposeFileType: FileType.Component,
       }).then((m) => m.OrderComponent);

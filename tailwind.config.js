@@ -2,14 +2,12 @@ module.exports = {
   prefix: "",
   mode: "jit",
   content: ["./src/**/*.{html,ts}"],
-  purge: {
-    enabled: true,
-    content: [
-      "./src/**/*.{html,ts}",
-      "./projects/app2-restaurant/src/**/*.{html,ts}",
-      "./projects/app3-orders/src/**/*.{html,ts}",
-    ],
-  },
+  enabled: true,
+  content: [
+    "./src/**/*.{html,ts}",
+    "./projects/app2-restaurant/src/**/*.{html,ts}",
+    "./projects/app3-orders/src/**/*.{html,ts}",
+  ],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     fontFamily: {

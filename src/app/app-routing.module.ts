@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'restaurants',
     loadChildren: () => mef.loadRemoteFile({
       remoteName: "restaurant",
-      remoteEntry: `http://localhost:4204/remoteRestaurant.js`,
+      remoteEntry: `http://127.0.0.1:4204/remoteRestaurant.js`,
       exposedFile: "RestaurantModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RestaurantModule),
@@ -23,7 +23,7 @@ const routes: Routes = [
     path: 'order',
     loadChildren: () => mef.loadRemoteFile({
       remoteName: "orders",
-      remoteEntry: `http://localhost:4205/remoteOrders.js`,
+      remoteEntry: `http://127.0.0.1:4205/remoteOrders.js`,
       exposedFile: "OrderModule",
       exposeFileType: FileType.Module
     }).then((m) => m.OrderModule),

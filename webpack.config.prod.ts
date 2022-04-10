@@ -5,7 +5,7 @@ export const prodWebpackConfig: Configuration = {
 
   ...webpackConfig,
   output: {
-    publicPath: 'http://localhost:80/', // production server,
+    publicPath: 'http://127.0.0.1:80/', // production server,
     uniqueName: 'home',
   },
   };

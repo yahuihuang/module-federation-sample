@@ -7,19 +7,19 @@ export const mfe = new MfeUtil();
 
 const routes: Routes = [
   {
-    path: '',
-    component: await new MfeUtil().loadRemoteFile({
-      remoteName: "home",
-      remoteEntry: `http://localhost:4203/remoteHome.js`,
+    path: 'home',
+    component: await mfe.loadRemoteFile({
+      remoteName: 'home',
+      remoteEntry: `${environment.moduleFederationUrl.app1}remoteHome.js`,
       exposedFile: "HomeComponent",
       exposeFileType: FileType.Component,
     }).then((m) => m.HomeComponent),
   },
   {
     path: 'restaurants',
-    loadChildren: () => new MfeUtil().loadRemoteFile({
+    loadChildren: () => mfe.loadRemoteFile({
       remoteName: "restaurant",
-      remoteEntry: `http://localhost:4204/remoteRestaurant.js`,
+      remoteEntry: `${environment.moduleFederationUrl.app2}remoteRestaurant.js`,
       exposedFile: "RestaurantModule",
       exposeFileType: FileType.Module
     }).then((m) => m.RestaurantModule),
@@ -28,6 +28,11 @@ const routes: Routes = [
     path: 'order',
     loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

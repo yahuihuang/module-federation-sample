@@ -1,10 +1,13 @@
 # Module Federation Angular
+# 參考 `https://dev.to/bitovi/how-to-build-a-micro-frontend-with-webpacks-module-federation-plugin-n41`、`https://github.com/ishedu/module-federation-angular`，
+angular由 12.1.4 改用 13.1
+##
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4203/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://127.0.0.1:4203/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:app1": "ng serve",
-    "start:app2": "ng serve app2-restaurant",
-    "start:app3": "ng serve app3-orders",
+    "start:app1": "ng serve --live-reload false --configuration development",
+    "start:app2": "ng serve --live-reload false app2-restaurant --configuration development",
+    "start:app3": "ng serve --live-reload false app3-orders --configuration development",
     "build:app1": "ng build",
     "build:app2": "ng build app2-restaurant",
     "build:app3": "ng build app3-orders",
-    "build:util-lib": "ng build utils",
+    "build:utils": "ng build utils",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:all": "npm run start:app1 & npm run start:app2 & npm run start:app3"
@@ -25,10 +25,13 @@
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
     "@tailwindcss/typography": "^0.5.1",
-    "place-my-order-assets": "^0.2.0",
+    "place-my-order-assets": "^0.2.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
+  },
+  "resolutions": {
+    "webpack": "5.68.0"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^13.1.0",
@@ -37,6 +40,8 @@
     "@angular/compiler-cli": "~13.2.2",
     "@tailwindcss/forms": "^0.4.0",
     "@types/jasmine": "~3.8.0",
+    "@types/jest": "^27.4.1",
+    "@types/mocha": "^9.1.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
@@ -46,6 +51,7 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.2.1",
     "tailwindcss": "^3.0.21",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "webpack": "^5.68.0"
   }
 }

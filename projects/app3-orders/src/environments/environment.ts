@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  moduleFederationUrl: {
+    app1: 'http://127.0.0.1:4203/',
+    app2: 'http://127.0.0.1:4204/',
+    app3: 'http://127.0.0.1:4205/'
+  }
 };
 
 /*
