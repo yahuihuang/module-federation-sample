@@ -25,14 +25,14 @@ const routes: Routes = [
     }).then((m) => m.OrderModule),
   },
   {
+    path: 'restaurants',
+    loadChildren: () => import('./restaurant/restaurant.module').then(m => m.RestaurantModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'restaurants',
-    loadChildren: () => import('./restaurant/restaurant.module').then(m => m.RestaurantModule),
-  }
 ];
 
 @NgModule({

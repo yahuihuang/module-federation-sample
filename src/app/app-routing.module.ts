@@ -7,7 +7,6 @@ export const mef = new MfeUtil();
 const routes: Routes = [
   {
     path: 'home',
-
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
@@ -27,6 +26,11 @@ const routes: Routes = [
       exposedFile: "OrderModule",
       exposeFileType: FileType.Module
     }).then((m) => m.OrderModule),
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
 ];
 
